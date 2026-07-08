@@ -17,7 +17,7 @@ import { StatCard } from '@/components/StatCard';
 import { LogTable } from '@/components/LogTable';
 import { LogDetailPanel } from '@/components/LogDetailPanel';
 import { SecurityCharts } from '@/components/Charts';
-import { FileUpload } from '@/components/FileUpload';
+import { DomainScan } from '@/components/DomainScan';
 import { ScenarioButtons } from '@/components/ScenarioButtons';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -151,7 +151,7 @@ export default function DashboardPage() {
             <ScenarioButtons onGenerate={handleGenerate} isGenerating={isInitializing} />
           </div>
           <div className="lg:col-span-1">
-            <FileUpload onUploadSuccess={handleGenerate} />
+            <DomainScan onScanSuccess={handleGenerate} />
           </div>
         </div>
 

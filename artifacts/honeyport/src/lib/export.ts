@@ -1,7 +1,7 @@
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import Papa from 'papaparse';
-import { LogEntry, generateMixedAttack } from './simulation';
+import { LogEntry } from './simulation';
 
 // Extend jsPDF type to include autoTable
 declare module 'jspdf' {
@@ -109,20 +109,4 @@ export function exportToPDF(logs: LogEntry[], summaryStats: any, filename = 'hon
   }
 
   doc.save(filename);
-}
-
-// Minimal stub for parsing uploaded logs
-export function parseUploadedLog(fileContent: string, fileName: string): LogEntry[] {
-  // In a real app, this would be robust. Here we'll just mock it based on extension
-  const extension = fileName.split('.').pop()?.toLowerCase();
-  
-  if (extension === 'csv') {
-    // Parse CSV (Simplified)
-    const res = Papa.parse(fileContent, { header: true });
-    // mapping logic would go here, returning mock logs for now
-  }
-  
-  // Just return a mixed attack scenario as a fallback for the simulation
-  // This simulates successfully "parsing" a file and finding threats.
-  return generateMixedAttack();
 }

@@ -74,7 +74,7 @@ export default function LandingPage() {
           <Link href="/dashboard" className="w-full">
             <Button size="lg" className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-heading tracking-widest text-sm neon-border flex items-center gap-2 group">
               <Terminal size={18} />
-              LAUNCH SIMULATOR
+              LAUNCH
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
