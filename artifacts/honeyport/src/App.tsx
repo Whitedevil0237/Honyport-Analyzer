@@ -7,7 +7,10 @@ import DashboardPage from '@/pages/dashboard';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
 const queryClient = new QueryClient();
+import { pinoHttp } from 'pino-http';
 
+// Initialize like this:
+app.use(pinoHttp());
 function Router() {
   return (
     <Switch>
