@@ -10,6 +10,16 @@ const queryClient = new QueryClient();
 import { pinoHttp } from 'pino-http';
 
 // Initialize like this:
+import { Request, Response } from 'express';
+
+// Line 13 & Line 20 fixes:
+app.get('/route-1', (req: Request, res: Response) => {
+  // ...
+});
+
+app.get('/route-2', (req: Request, res: Response) => {
+  // ...
+});
 app.use(pinoHttp());
 function Router() {
   return (
